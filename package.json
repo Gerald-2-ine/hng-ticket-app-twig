@@ -1,0 +1,17 @@
+{
+  "name": "twig-starter-template",
+  "version": "1.0.0",
+  "description": "A basic PHP and Twig starter template with Tailwind CSS integration.",
+  "author": "uCodes",
+  "type": "module",
+  "scripts": {
+    "build:css": "postcss src/styles/tailwind.css -o src/styles/out.tailwind.css",
+    "watch:css": "postcss src/styles/tailwind.css -o src/styles/out.tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.16"
+  }
+}

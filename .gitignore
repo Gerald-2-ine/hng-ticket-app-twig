@@ -1,0 +1,55 @@
+# OS / misc
+.DS_Store
+Thumbs.db
+
+# IDEs
+/.idea/
+/.vscode/
+/nbproject/
+*.iml
+*.sublime-*
+
+# Node / frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Composer / PHP dependencies
+/vendor/
+/composer.phar
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+.env.backup
+
+# Symfony / Twig caches & runtime
+/var/
+/var/*
+!/var/.gitkeep
+
+# Build / compiled assets
+/public/build/
+/public/bundles/
+/dist/
+/build/
+/cache/
+
+# Logs, test output, coverage
+*.log
+logs/
+coverage/
+.phpunit.result.cache
+phpunit-result-*
+
+# Generated / archive files
+*.zip
+*.tar.gz
+*.gz
+*.cache
+
+# Other
+.vagrant/
