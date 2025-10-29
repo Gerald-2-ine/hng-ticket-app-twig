@@ -1,0 +1,277 @@
+/* 🎟️ Ticket Page Styling */
+.tickets-container {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #dbeafe 0%, #f1f5f9 100%);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Page Title */
+.tickets-container h2 {
+  text-align: center;
+  color: #1e3a8a;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Back Button */
+.btn-back-dashboard {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 8px 14px;
+  background-color: #9ca3af;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-back-dashboard:hover {
+  background-color: #6b7280;
+  transform: translateY(-2px);
+}
+
+/* Add Ticket Button */
+.add-ticket-btn {
+  display: block;
+  margin: 0 auto 1.5rem;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.add-ticket-btn:hover {
+  background: #1e40af;
+}
+
+/* Ticket List */
+.ticket-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Ticket Card */
+.ticket-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.ticket-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Status Badge */
+.status {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+.status.open {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status.in-progress {
+  background-color: #fef9c3;
+  color: #92400e;
+}
+
+.status.closed {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Ticket Actions */
+.ticket-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.ticket-actions select {
+  flex: 1;
+  padding: 0.4rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.ticket-actions button {
+  flex: 1;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-btn {
+  background: #f59e0b;
+}
+
+.edit-btn:hover {
+  background: #d97706;
+}
+
+.delete-btn {
+  background: #ef4444;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.cancel-btn {
+  background-color: #6b7280;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #4b5563;
+}
+
+/* Toast Notification */
+.toast {
+  opacity: 0;
+  transition: all 0.4s ease;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 200;
+  transform: translateY(20px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: #22c55e;
+}
+
+.toast.error {
+  background: #ef4444;
+}
+
+.toast.info {
+  background: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .tickets-container {
+    padding: 1.2rem;
+  }
+
+  .ticket-card {
+    padding: 1rem;
+  }
+
+  .ticket-actions {
+    flex-direction: column;
+  }
+
+  .ticket-actions button,
+  .ticket-actions select {
+    width: 100%;
+  }
+}

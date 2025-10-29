@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<link rel="stylesheet" href="/styles/tickets.css">
+
+<div class="tickets-container">
+  <h2>🎫 Ticket Management</h2>
+  <a href="/dashboard" class="btn-back-dashboard">← Back</a>
+  <button class="add-ticket-btn" id="addTicketBtn">+ Add New Ticket</button>
+
+  <!-- Ticket List -->
+  <div id="ticketList" class="ticket-list">
+    <p>Loading tickets...</p>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay" style="display: none;">
+    <div class="modal-content" id="modalContent">
+      <h3 id="modalTitle">Create New Ticket</h3>
+      <form id="ticketForm" class="modal-form">
+        <input type="text" id="ticketTitle" name="title" placeholder="Ticket Title" />
+        <textarea id="ticketDescription" name="description" placeholder="Ticket Description"></textarea>
+        <div class="modal-buttons">
+          <button type="submit" class="save-btn" id="saveTicketBtn">Add Ticket</button>
+          <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+</div>
+
+<script src="/scripts/tickets.js"></script>
+{% endblock %}

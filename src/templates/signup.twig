@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+
+  <div class="signup-container">
+    <div id="alert-box"></div>
+
+    <div class="signup-card">
+      <h2>Create an Account ✨</h2>
+      <p>Join the ticket management system today</p>
+
+      <form id="signup-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Enter password" required>
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" name="confirmPassword" placeholder="Confirm password" required>
+        </div>
+
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <p class="switch-text">
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+ <script src="/scripts/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Container ===== */
+.login-container,
+.signup-container {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #c9d6ff 0%, #e2e2e2 100%);
+  padding: 2rem;
+}
+
+/* ===== Card ===== */
+.login-card,
+.signup-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h2,
+.signup-card h2 {
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.login-card p,
+.signup-card p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===== Form Groups ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus {
+  border-color: #6a9df8;
+  box-shadow: 0 0 0 2px rgba(106, 157, 248, 0.2);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background-color: #6a9df8;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4e83e4;
+  transform: translateY(-2px);
+}
+
+/* ===== Error & Success Messages ===== */
+.error-text {
+  color: #e63946;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-text {
+  color: #4caf50;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Switch Text ===== */
+.switch-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch-text a {
+  color: #6a9df8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Card Animation ===== */
+.login-card,
+.signup-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Global Success & Error Alerts (Top of Screen) ===== */
+.alert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.5s ease forwards;
+}
+
+/* Success message style */
+.alert.success {
+  background-color: #4caf50;
+}
+
+/* Error message style */
+.alert.error {
+  background-color: #f8f7f7; 
+  color: #e63946;
+}
+
+/* Smooth entry animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Slide down on success or card appearance */
+.login-card, .signup-card {
+  animation: cardIn 0.6s ease forwards;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

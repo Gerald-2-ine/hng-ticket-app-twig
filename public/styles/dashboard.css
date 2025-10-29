@@ -1,0 +1,100 @@
+/* Dashboard Styles */
+.dashboard-container {
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  background: crimson;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stat-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 600;
+}
+
+/* Status Colors */
+.badge.open,
+.stat-card.open {
+  background: #2ecc71; /* Green */
+}
+
+.badge.in-progress,
+.stat-card.in-progress {
+  background: #f1c40f; /* Yellow */
+  color: #222;
+}
+
+.badge.closed,
+.stat-card.closed {
+  background: #e74c3c; /* Red */
+}
+
+.stat-card.total {
+  background: #3498db; /* Blue for total */
+  color: white;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+  max-width: 150px;
+  text-align: center;
+}
+
+
+/* ========== Responsive (Tablet and Up) ========== */
+@media (min-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+  }
+}

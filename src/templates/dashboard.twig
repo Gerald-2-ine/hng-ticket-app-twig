@@ -1,22 +1,72 @@
-{# This is the dashboard template, extend it from the base template #}
-{% extends "base.twig" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎟️ Ticket Management Dashboard</title>
+  <link rel="stylesheet" href="/styles/Dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>🎟️ Ticket Management Dashboard</h1>
+      <button id="logout-btn" class="logout-btn">Logout</button>
+    </header>
 
-{% block title %}{{title}}{% endblock %}
+    <section class="stats-section">
+      <div class="stat-card open">
+        <h3>Open Tickets</h3>
+        <span class="badge open">Open</span>
+        <p id="open-count">0</p>
+      </div>
 
-{% block styles %}
-    {{ parent() }}
-    <link rel="stylesheet" href="dashboard.css">
-{% endblock %}
+      <div class="stat-card in-progress">
+        <h3>In Progress</h3>
+        <span class="badge in-progress">In Progress</span>
+        <p id="inprogress-count">0</p>
+      </div>
 
-{% block content %}
-    <main class="min-h-screen flex flex-col items-center justify-center">
-        <h1 class="text-7xl font-bold ">Dashboard</h1>
-        <p>I don't know what to add as templates, sha manage this one</p>
-    </main>
-{% endblock %}
+      <div class="stat-card closed">
+        <h3>Closed Tickets</h3>
+        <span class="badge closed">Closed</span>
+        <p id="closed-count">0</p>
+      </div>
 
-{% block scripts %}
-    {{parent()}}
-        {# Import or write javascript directly inhere #}
-        {# <script src="script.js"></script> #}
-{% endblock %}
+      <div class="stat-card total">
+        <h3>Total Tickets</h3>
+        <p id="total-count">0</p>
+      </div>
+    </section>
+
+    <section class="nav-links">
+      <a href="/tickets" class="btn-primary">Manage Tickets</a>
+    </section>
+  </div>
+
+  <script>
+    // Load tickets from localStorage
+    function loadTickets() {
+      const storedTickets = JSON.parse(localStorage.getItem("ticketapp_tickets")) || [];
+      const openTickets = storedTickets.filter(t => t.status === "open").length;
+      const inProgressTickets = storedTickets.filter(t => t.status === "in-progress").length;
+      const closedTickets = storedTickets.filter(t => t.status === "closed").length;
+
+      document.getElementById("open-count").textContent = openTickets;
+      document.getElementById("inprogress-count").textContent = inProgressTickets;
+      document.getElementById("closed-count").textContent = closedTickets;
+      document.getElementById("total-count").textContent = storedTickets.length;
+    }
+
+    // Handle logout
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      localStorage.removeItem("ticketapp_session");
+      window.location.href = "/login";
+    });
+
+    // Initial load + real-time updates
+    loadTickets();
+    window.addEventListener("storage", loadTickets);
+    window.addEventListener("ticketsUpdated", loadTickets);
+  </script>
+</body>
+</html>
