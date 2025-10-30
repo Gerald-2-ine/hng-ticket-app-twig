@@ -5,12 +5,14 @@ A modern PHP starter template with [Twig](https://twig.symfony.com/) templating 
 **With love from [uCodes](https://github.com/python-fuse)** 💙
 
 ---
-
+Live URL: hng-ticket-app-twig-production.up.railway.app
+--------------------------------------------------------
+Repo Link: https://github.com/Gerald-2-ine/hng-ticket-app-twig
 ## 📋 Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-### 1. **PHP** (>= 7.4)
+### 1. **PHP** (>= 8.3.13)
 
 - **Check if installed:** `php --version`
 - **Install:**
